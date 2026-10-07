@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Fahad bin Sajjad | Software Engineer, Cloud and AI</title>
+<meta name="description" content="Portfolio of Muhammad Fahad bin Sajjad: software engineer (cloud and AI), Master 1 in Biometrics and Computer Vision, looking for an M2 internship.">
+<link rel="preload" href="assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#top">Fahad</a>
+  <nav aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#stack">Skills</a>
+    <a class="nav-cta" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Software engineer / cloud and AI</p>
+      <h1>Muhammad Fahad bin Sajjad</h1>
+      <p class="lead">Software engineer with 5+ years of experience, bringing backend and cloud engineering together with machine learning, deep learning and computer vision.</p>
+      <p class="status"><span class="dot" aria-hidden="true"></span>Looking for an M2 internship, from January 2027, in France or abroad.</p>
+      <p class="actions">
+        <a class="btn btn-solid" href="mailto:m.fahad.bnsajjad@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/mfahadbinsajjad/">LinkedIn</a>
+        <a class="btn" href="https://github.com/MrMuhammadFahad">GitHub</a>
+      </p>
+    </div>
+    <figure class="portrait-frame">
+      <img class="portrait" src="assets/fahad.png" alt="Portrait of Muhammad Fahad bin Sajjad" width="190" height="190">
+      <figcaption>Paris, France <span>Open to M2 opportunities</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="stats wrap" aria-label="Highlights">
+  <div><strong>5+ years</strong><span>building backends, APIs and cloud apps</span></div>
+  <div><strong>3 languages</strong><span>English C1, French A2, Urdu native</span></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="wrap two-col">
+    <h2>About</h2>
+    <div class="about-body">
+      <p>I am a software engineer with 5+ years of experience building backend systems, APIs and cloud applications. I have worked across the full stack, progressing from junior to senior engineering roles and delivering microservices, payment integrations and automated data workflows.</p>
+      <p>Alongside my industry experience, I am developing expertise in machine learning, deep learning, biometrics and computer vision through my Master's studies at Université Paris-Est Créteil. I am interested in applying these methods to real-world visual and biometric data, combining sound engineering with thoughtful model development and evaluation.</p>
+      <p>Based in Paris, I am preparing for an M2 internship from January 2027, where I can contribute my software engineering experience while growing further in applied AI.</p>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Paris, France</dd></div>
+        <div><dt>Languages</dt><dd>English (C1), French (A2), Urdu (native)</dd></div>
+        <div><dt>Interests</dt><dd>Biometrics, computer vision, agentic AI, performance</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section alt">
+  <div class="wrap">
+    <p class="eyebrow">Selected work / 2024-2026</p>
+    <h2>Projects</h2>
+    <p class="intro">A closer look at the problems I explored, how I approached them, and what each project makes possible.</p>
+
+    <ul class="projects">
+      <li class="project featured">
+        <div class="p-main">
+          <span class="project-index">01 / Master's project</span>
+          <h3>NeuroSynth</h3>
+          <p class="project-summary"><span>Purpose</span>Creates synthetic EEG examples so signal-generation ideas can be explored across six defined classes.</p>
+          <p class="project-detail"><span>How I built it</span>Claude generates 8-channel signals from prompts. Interactive controls vary the prompts, then validators check each signal against the rules for its intended class.</p>
+          <p class="project-impact"><span>Why it matters</span>The validation step helps catch generated signals that do not fit their label before they are treated as valid examples. It brings generative AI and data quality checks into one research workflow.</p>
+          <ol class="project-flow" aria-label="Project workflow">
+            <li><span>01</span>Generate signal</li>
+            <li><span>02</span>Randomise prompts</li>
+            <li><span>03</span>Validate class</li>
+          </ol>
+          <p class="note">The repository is private. Access is available on request through LinkedIn.</p>
+        </div>
+        <aside class="p-side">
+          <p class="side-label">Project details</p>
+          <dl class="project-facts">
+            <div><dt>Signal</dt><dd>8 channels</dd></div>
+            <div><dt>Coverage</dt><dd>6 EEG classes</dd></div>
+            <div><dt>Generator</dt><dd>Claude</dd></div>
+          </dl>
+          <p class="side-label">Toolbox</p>
+          <ul class="project-stack"><li>EEG</li><li>Synthetic data</li><li>LLMs</li><li>Validation</li></ul>
+          <a href="https://github.com/MrMuhammadFahad/EEG-Synthetic-Data">Ask for access</a>
+        </aside>
+      </li>
+
+      <li class="project">
+        <div class="p-main">
+          <span class="project-index">02 / Computer vision</span>
+          <h3>Pose-based gait analysis</h3>
+          <p class="project-summary"><span>Purpose</span>Turns a walking video into measurements that describe how a person moves.</p>
+          <p class="project-detail"><span>How I built it</span>MediaPipe Pose finds hip, knee and ankle points in the video. The pipeline uses those points to calculate joint angles, step duration, cadence and ankle movement.</p>
+          <p class="project-impact"><span>Why it matters</span>The eight measurements turn visual movement into structured data that can be compared or passed to a machine-learning model. This connects computer vision to a practical input for gait analysis.</p>
+          <ol class="project-flow" aria-label="Project workflow">
+            <li><span>01</span>Walking video</li>
+            <li><span>02</span>Pose keypoints</li>
+            <li><span>03</span>8-value profile</li>
+          </ol>
+        </div>
+        <aside class="p-side">
+          <p class="side-label">Project details</p>
+          <dl class="project-facts">
+            <div><dt>Input</dt><dd>Walking video</dd></div>
+            <div><dt>Landmarks</dt><dd>Hip, knee, ankle</dd></div>
+            <div><dt>Output</dt><dd>8 gait features</dd></div>
+          </dl>
+          <p class="side-label">Toolbox</p>
+          <ul class="project-stack"><li>Python</li><li>MediaPipe</li><li>Pose estimation</li><li>Feature extraction</li></ul>
+          <a href="https://github.com/MrMuhammadFahad/pose-based-gait-analysis">View repository</a>
+        </aside>
+      </li>
+
+      <li class="project">
+        <div class="p-main">
+          <span class="project-index">03 / Image measurement</span>
+          <h3>Hand morphology measurement</h3>
+          <p class="project-summary"><span>Purpose</span>Measures finger length and width at both the base and midpoint from a hand image.</p>
+          <p class="project-detail"><span>How I built it</span>The OpenCV workflow converts the image to grayscale, lets a user select measurement points, and calculates the dimensions. It then summarizes the results with statistics, visualizations and a LaTeX report.</p>
+          <p class="project-impact"><span>Why it matters</span>It turns a visual inspection into clear numerical measurements and a report that can be reviewed or included in further analysis.</p>
+          <ol class="project-flow" aria-label="Project workflow">
+            <li><span>01</span>Hand image</li>
+            <li><span>02</span>Select points</li>
+            <li><span>03</span>Measure and report</li>
+          </ol>
+        </div>
+        <aside class="p-side">
+          <p class="side-label">Project details</p>
+          <dl class="project-facts">
+            <div><dt>Measurement</dt><dd>Finger length</dd></div>
+            <div><dt>Width</dt><dd>Base and midpoint</dd></div>
+            <div><dt>Output</dt><dd>Statistics and report</dd></div>
+          </dl>
+          <p class="side-label">Toolbox</p>
+          <ul class="project-stack"><li>Python</li><li>OpenCV</li><li>NumPy</li><li>Matplotlib</li></ul>
+          <a href="https://github.com/MrMuhammadFahad/Hand-Morphology-Measurement-using-Python-OpenCV">View repository</a>
+        </aside>
+      </li>
+
+      <li class="project">
+        <div class="p-main">
+          <span class="project-index">04 / Full-stack application</span>
+          <h3>Prompt Lab: LLM rating stack</h3>
+          <p class="project-summary"><span>Purpose</span>Lets a user try a language model, rate its answer, and review the collected feedback.</p>
+          <p class="project-detail"><span>How I built it</span>A Gradio interface sends each prompt to a FastAPI service running Qwen3-0.6B. The service records the prompt and like/dislike rating in MySQL and provides rating statistics. Docker Compose runs the app and database together.</p>
+          <p class="project-impact"><span>Why it matters</span>This connects model use, user feedback and stored results in one end-to-end application, making responses easier to review than a one-off chat.</p>
+          <ol class="project-flow" aria-label="Project workflow">
+            <li><span>01</span>Submit prompt</li>
+            <li><span>02</span>Rate response</li>
+            <li><span>03</span>Review statistics</li>
+          </ol>
+        </div>
+        <aside class="p-side">
+          <p class="side-label">Project details</p>
+          <dl class="project-facts">
+            <div><dt>Model</dt><dd>Qwen3-0.6B</dd></div>
+            <div><dt>Feedback</dt><dd>Like / dislike</dd></div>
+            <div><dt>Storage</dt><dd>MySQL</dd></div>
+          </dl>
+          <p class="side-label">Toolbox</p>
+          <ul class="project-stack"><li>FastAPI</li><li>Transformers</li><li>MySQL</li><li>Gradio</li><li>Docker</li></ul>
+          <a href="https://github.com/MrMuhammadFahad/LLM-rating-stack">View repository</a>
+        </aside>
+      </li>
+
+      <li class="project">
+        <div class="p-main">
+          <span class="project-index">05 / Data analysis</span>
+          <h3>Climate trend analysis</h3>
+          <p class="project-summary"><span>Purpose</span>Studies historical climate data to explore long-term temperature trends and compare them with reported case counts.</p>
+          <p class="project-detail"><span>How I built it</span>I cleaned and explored the data, then created interactive charts and maps, a correlation matrix and a linear regression model to examine the trends.</p>
+          <p class="project-impact"><span>Why it matters</span>The visualizations make patterns easier to inspect, while the statistical outputs support further analysis. Correlation and regression can show relationships and trends, but do not by themselves prove cause and effect.</p>
+          <ol class="project-flow" aria-label="Project workflow">
+            <li><span>01</span>Clean climate data</li>
+            <li><span>02</span>Analyze trends</li>
+            <li><span>03</span>Visualize results</li>
+          </ol>
+        </div>
+        <aside class="p-side">
+          <p class="side-label">Project details</p>
+          <dl class="project-facts">
+            <div><dt>Focus</dt><dd>Temperature trends</dd></div>
+            <div><dt>Comparison</dt><dd>Reported case counts</dd></div>
+            <div><dt>Outputs</dt><dd>Maps, charts, regression</dd></div>
+          </dl>
+          <p class="side-label">Toolbox</p>
+          <ul class="project-stack"><li>Python</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Seaborn</li></ul>
+          <a href="https://github.com/MrMuhammadFahad/climate-trend-analysis">View repository</a>
+        </aside>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <ol class="timeline">
+      <li>
+        <p class="when">Mar 2024 to Aug 2025</p>
+        <div>
+          <h3>Senior Software Engineer</h3>
+          <p class="where">Rockville Technologies, Islamabad</p>
+          <ul>
+            <li>Designed backend microservices in FastAPI, Flask and NestJS, with React frontends and secure APIs using JWT and role-based access control.</li>
+            <li>Improved performance through SQL and NoSQL tuning, indexing and Redis caching.</li>
+            <li>Deployed cloud-native apps on AWS (S3, Lambda, EC2) with Docker and automated CI/CD pipelines.</li>
+            <li>Built automated data workflows, reporting systems, agentic AI solutions and FinTech integrations (payment gateways, transaction processing).</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <p class="when">Jul 2023 to Mar 2024</p>
+        <div>
+          <h3>Software Engineer</h3>
+          <p class="where">IKONIC Solutions, Islamabad</p>
+          <ul>
+            <li>Built web applications with Node.js (Express) and Flask, and responsive interfaces in Angular and React.</li>
+            <li>Optimised MongoDB with indexing and added Redis caching for faster data access.</li>
+            <li>Implemented authentication, rate limiting and RBAC while refactoring systems into modular architectures.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <p class="when">Oct 2021 to Jul 2023</p>
+        <div>
+          <h3>Junior Software Engineer</h3>
+          <p class="where">MWAN Mobiles, Rawalpindi</p>
+          <ul>
+            <li>Built APIs in Node.js and Python (Flask, FastAPI) and integrated third-party payment, SMS and analytics services.</li>
+            <li>Migrated a monolith to microservices and added real-time features with WebSockets and Socket.IO.</li>
+            <li>Tuned backend performance and reduced latency.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section alt">
+  <div class="wrap">
+    <h2>Education</h2>
+
+    <div class="degree">
+      <div>
+        <h3>Master 1, Biometrics and Computer Vision</h3>
+        <p class="where">Université Paris-Est Créteil (UPEC), 2025 to 2026</p>
+        <p>Focus areas include optics, image processing, computer vision, multimedia and international biometrics. Completed 60 ECTS credits.</p>
+      </div>
+    </div>
+
+    <div class="degree second">
+      <div>
+        <h3>BS in Computer Science</h3>
+        <p class="where">Capital University of Science and Technology, Islamabad, 2017 to 2021</p>
+        <p>Data science, artificial intelligence, object-oriented programming, C++, operating systems, data warehousing, data algorithms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack" class="section">
+  <div class="wrap">
+    <p class="eyebrow">Technical expertise</p>
+    <h2>Skills &amp; Stack</h2>
+    <p class="intro">From production backend systems to applied machine learning and computer vision.</p>
+    <ul class="skills-grid">
+      <li class="skill-card skill-featured">
+        <div class="skill-heading"><span>01</span><h3>ML, Deep Learning &amp; Computer Vision</h3></div>
+        <p>Applying machine learning to visual and biometric data, from image processing and pose features to model evaluation.</p>
+        <ul class="skill-list"><li>Machine learning</li><li>Deep learning</li><li>Computer vision</li><li>Biometrics</li><li>Image processing</li><li>Pose estimation</li><li>Feature extraction</li><li>Pattern recognition</li><li>OpenCV</li><li>MediaPipe</li></ul>
+      </li>
+      <li class="skill-card">
+        <div class="skill-heading"><span>02</span><h3>Backend Engineering</h3></div>
+        <p>Building APIs and services with production-focused frameworks and clear service boundaries.</p>
+        <ul class="skill-list"><li>Node.js</li><li>Express</li><li>NestJS</li><li>FastAPI</li><li>Flask</li><li>Django</li><li>REST</li><li>GraphQL</li></ul>
+      </li>
+      <li class="skill-card">
+        <div class="skill-heading"><span>03</span><h3>Languages &amp; Frontend</h3></div>
+        <p>Developing responsive interfaces and working across application layers.</p>
+        <ul class="skill-list"><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>SQL</li><li>React</li><li>Angular</li></ul>
+      </li>
+      <li class="skill-card">
+        <div class="skill-heading"><span>04</span><h3>Data &amp; Storage</h3></div>
+        <p>Working with relational and document databases, data pipelines, and analysis tools.</p>
+        <ul class="skill-list"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Redis</li><li>Pandas</li><li>NumPy</li><li>Data pipelines</li></ul>
+      </li>
+      <li class="skill-card">
+        <div class="skill-heading"><span>05</span><h3>Cloud &amp; DevOps</h3></div>
+        <p>Deploying containerized and cloud-native applications with automated delivery workflows.</p>
+        <ul class="skill-list"><li>AWS</li><li>S3</li><li>Lambda</li><li>EC2</li><li>Docker</li><li>CI/CD</li><li>Jenkins</li></ul>
+      </li>
+      <li class="skill-card">
+        <div class="skill-heading"><span>06</span><h3>Architecture &amp; Integrations</h3></div>
+        <p>Connecting services and external systems through reliable, maintainable architectures.</p>
+        <ul class="skill-list"><li>Microservices</li><li>Distributed systems</li><li>RabbitMQ</li><li>Kafka</li><li>WebSockets</li><li>LLM integration</li><li>Agentic AI</li><li>Git</li><li>GitHub</li><li>Prisma</li><li>Sequelize</li><li>Mongoose</li><li>SQLAlchemy</li></ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- CONTACT -->
+<footer id="contact" class="contact">
+  <div class="wrap contact-layout">
+    <div class="contact-copy">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Let's build something meaningful.</h2>
+      <p class="contact-intro">I am available for an M2 internship from January 2027, in France or abroad. Send a note about the role or project and I will get back to you.</p>
+      <dl class="contact-details">
+        <div><dt>Email</dt><dd><a href="mailto:m.fahad.bnsajjad@gmail.com">m.fahad.bnsajjad@gmail.com</a></dd></div>
+        <div><dt>Based in</dt><dd>Paris, France</dd></div>
+      </dl>
+      <p class="links">
+        <a href="https://www.linkedin.com/in/mfahadbinsajjad/">LinkedIn</a>
+        <a href="https://github.com/MrMuhammadFahad">GitHub</a>
+      </p>
+    </div>
+    <form class="contact-form" action="https://formsubmit.co/m.fahad.bnsajjad@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New portfolio message">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-fields">
+        <label for="contact-name">Name<input id="contact-name" name="name" type="text" autocomplete="name" required></label>
+        <label for="contact-email">Email<input id="contact-email" name="email" type="email" autocomplete="email" required></label>
+        <label class="field-full" for="contact-subject">Subject<input id="contact-subject" name="subject" type="text" required></label>
+        <label class="field-full" for="contact-message">Message<textarea id="contact-message" name="message" rows="5" required></textarea></label>
+      </div>
+      <button class="submit-button" type="submit">Send message <span aria-hidden="true">&rarr;</span></button>
+      <p class="form-note">Your message will be sent directly to my inbox.</p>
+    </form>
+    <p class="fine">Muhammad Fahad bin Sajjad, Paris.</p>
+  </div>
+</footer>
+
+</body>
+</html>
