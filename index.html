@@ -71,35 +71,40 @@
 <!-- PROJECTS -->
 <section id="projects" class="section alt">
   <div class="wrap">
-    <p class="eyebrow">Selected work / 2024-2026</p>
+    <p class="eyebrow">Selected work / 2021-2026</p>
     <h2>Projects</h2>
     <p class="intro">A closer look at the problems I explored, how I approached them, and what each project makes possible.</p>
 
     <ul class="projects">
       <li class="project featured">
         <div class="p-main">
-          <span class="project-index">01 / Master's project</span>
+          <span class="project-index">01 / Master 1 research project · 2025–2026</span>
           <h3>NeuroSynth</h3>
-          <p class="project-summary"><span>Purpose</span>Creates synthetic EEG examples so signal-generation ideas can be explored across six defined classes.</p>
-          <p class="project-detail"><span>How I built it</span>Claude generates 8-channel signals from prompts. Interactive controls vary the prompts, then validators check each signal against the rules for its intended class.</p>
-          <p class="project-impact"><span>Why it matters</span>The validation step helps catch generated signals that do not fit their label before they are treated as valid examples. It brings generative AI and data quality checks into one research workflow.</p>
+          <p class="project-summary"><span>Research platform</span>A full-stack system for generating, validating and evaluating synthetic 8-channel EEG across six cognitive and clinical classes. The study compares an LLM-and-Fourier pipeline with a baseline diffusion model and a frequency-guided diffusion approach.</p>
+          <p class="project-detail"><span>Three synthesis methods</span><strong>LLM + Fourier:</strong> Claude returns structured EEG frequency parameters; a Fourier engine synthesizes the waveform, then physiological quality checks validate it and retry failures. <strong>DDPM baseline:</strong> a class-conditional 1D U-Net learns to generate signals. <strong>MSC + DFSI:</strong> an enhanced diffusion model combines multi-scale temporal convolutions with diffusion-step-aware frequency guidance.</p>
+          <p class="project-detail"><span>Data &amp; evaluation</span>Real EEG comes from PhysioNet, CHB-MIT, Sleep-EDF and cognitive-task data. Each example contains eight channels over 10 seconds at 256 Hz. Simple CNN and EEGNet classifiers test real-to-synthetic, synthetic-to-real and mixed-data transfer, alongside a real-to-real baseline. Signal similarity is assessed with power spectral density, Pearson correlation and Hjorth parameters; classification is reported with per-class precision, recall and F1.</p>
+          <p class="project-impact"><span>Research contribution</span>Tests whether generated EEG is not only plausible in signal statistics, but also useful for downstream classification and data augmentation. Preprocessing and evaluation use reproducible splits, with normalization fitted on training data to avoid leakage.</p>
           <ol class="project-flow" aria-label="Project workflow">
-            <li><span>01</span>Generate signal</li>
-            <li><span>02</span>Randomise prompts</li>
-            <li><span>03</span>Validate class</li>
+            <li><span>01</span>Prepare real EEG</li>
+            <li><span>02</span>Generate with 3 methods</li>
+            <li><span>03</span>Compare signals &amp; classifiers</li>
           </ol>
-          <p class="note">The repository is private. Access is available on request through LinkedIn.</p>
+          <p class="note">Developed for the M1 Semester 2 project at Université Paris-Est Créteil. The repository is private; access is available on request.</p>
         </div>
         <aside class="p-side">
-          <p class="side-label">Project details</p>
+          <p class="side-label">Research at a glance</p>
           <dl class="project-facts">
-            <div><dt>Signal</dt><dd>8 channels</dd></div>
-            <div><dt>Coverage</dt><dd>6 EEG classes</dd></div>
-            <div><dt>Generator</dt><dd>Claude</dd></div>
+            <div><dt>Signal shape</dt><dd>8 × 2,560 samples</dd></div>
+            <div><dt>Sampling</dt><dd>256 Hz · 10 seconds</dd></div>
+            <div><dt>Classes</dt><dd>6 brain states</dd></div>
+            <div><dt>Data volume</dt><dd>1,716 real · 8,400 synthetic</dd></div>
+            <div><dt>Synthesis</dt><dd>LLM + 2 DDPMs</dd></div>
+            <div><dt>Evaluation</dt><dd>CNN + EEGNet</dd></div>
+            <div><dt>Data splits</dt><dd>Seeded · no leakage</dd></div>
           </dl>
-          <p class="side-label">Toolbox</p>
-          <ul class="project-stack"><li>EEG</li><li>Synthetic data</li><li>LLMs</li><li>Validation</li></ul>
-          <a href="https://github.com/MrMuhammadFahad/EEG-Synthetic-Data">Ask for access</a>
+          <p class="side-label">Platform &amp; research stack</p>
+          <ul class="project-stack"><li>React</li><li>TypeScript</li><li>FastAPI</li><li>Python</li><li>PyTorch</li><li>MySQL</li><li>Claude API</li><li>EEGNet</li><li>Signal processing</li></ul>
+          <a href="https://www.linkedin.com/in/mfahadbinsajjad/" target="_blank" rel="noopener noreferrer">Request access on LinkedIn ↗</a>
         </aside>
       </li>
 
@@ -107,21 +112,22 @@
         <div class="p-main">
           <span class="project-index">02 / Computer vision</span>
           <h3>Pose-based gait analysis</h3>
-          <p class="project-summary"><span>Purpose</span>Turns a walking video into measurements that describe how a person moves.</p>
-          <p class="project-detail"><span>How I built it</span>MediaPipe Pose finds hip, knee and ankle points in the video. The pipeline uses those points to calculate joint angles, step duration, cadence and ankle movement.</p>
-          <p class="project-impact"><span>Why it matters</span>The eight measurements turn visual movement into structured data that can be compared or passed to a machine-learning model. This connects computer vision to a practical input for gait analysis.</p>
+          <p class="project-summary"><span>Purpose</span>Transforms ordinary walking footage into a compact, structured gait profile using markerless pose estimation and temporal movement analysis.</p>
+          <p class="project-detail"><span>Video-to-features pipeline</span>Python and MediaPipe Pose detect body landmarks frame by frame. The analysis follows hip, knee and ankle keypoints to calculate joint angles and derive step duration, cadence and ankle movement from the walking sequence.</p>
+          <p class="project-impact"><span>Why it matters</span>Instead of relying on a visual impression alone, the project represents gait as eight measurable features that can be inspected, compared across recordings, or used as input to subsequent analysis. It demonstrates a practical path from computer-vision landmarks to interpretable movement metrics.</p>
           <ol class="project-flow" aria-label="Project workflow">
             <li><span>01</span>Walking video</li>
-            <li><span>02</span>Pose keypoints</li>
-            <li><span>03</span>8-value profile</li>
+            <li><span>02</span>Track pose landmarks</li>
+            <li><span>03</span>Calculate 8 gait features</li>
           </ol>
         </div>
         <aside class="p-side">
           <p class="side-label">Project details</p>
           <dl class="project-facts">
             <div><dt>Input</dt><dd>Walking video</dd></div>
-            <div><dt>Landmarks</dt><dd>Hip, knee, ankle</dd></div>
+            <div><dt>Landmarks</dt><dd>Hip, knee &amp; ankle</dd></div>
             <div><dt>Output</dt><dd>8 gait features</dd></div>
+            <div><dt>Metrics</dt><dd>Angles, cadence, step timing</dd></div>
           </dl>
           <p class="side-label">Toolbox</p>
           <ul class="project-stack"><li>Python</li><li>MediaPipe</li><li>Pose estimation</li><li>Feature extraction</li></ul>
@@ -133,13 +139,13 @@
         <div class="p-main">
           <span class="project-index">03 / Image measurement</span>
           <h3>Hand morphology measurement</h3>
-          <p class="project-summary"><span>Purpose</span>Measures finger length and width at both the base and midpoint from a hand image.</p>
-          <p class="project-detail"><span>How I built it</span>The OpenCV workflow converts the image to grayscale, lets a user select measurement points, and calculates the dimensions. It then summarizes the results with statistics, visualizations and a LaTeX report.</p>
-          <p class="project-impact"><span>Why it matters</span>It turns a visual inspection into clear numerical measurements and a report that can be reviewed or included in further analysis.</p>
+          <p class="project-summary"><span>Purpose</span>Turns a hand image into a structured set of finger measurements, covering both finger length and width at the base and midpoint.</p>
+          <p class="project-detail"><span>Image-to-report workflow</span>Using Python, OpenCV and NumPy, the tool prepares the image in grayscale, supports interactive selection of measurement points, and calculates the requested dimensions. It then brings the measurements together with summary statistics, visualizations and a generated LaTeX report.</p>
+          <p class="project-impact"><span>Why it matters</span>The workflow makes the measurement process explicit and its output easier to review: observations become numerical results, visual summaries and a reusable report rather than remaining an unstructured image.</p>
           <ol class="project-flow" aria-label="Project workflow">
             <li><span>01</span>Hand image</li>
-            <li><span>02</span>Select points</li>
-            <li><span>03</span>Measure and report</li>
+            <li><span>02</span>Select measurement points</li>
+            <li><span>03</span>Summarize &amp; export report</li>
           </ol>
         </div>
         <aside class="p-side">
@@ -147,7 +153,7 @@
           <dl class="project-facts">
             <div><dt>Measurement</dt><dd>Finger length</dd></div>
             <div><dt>Width</dt><dd>Base and midpoint</dd></div>
-            <div><dt>Output</dt><dd>Statistics and report</dd></div>
+            <div><dt>Output</dt><dd>Statistics, plots, LaTeX</dd></div>
           </dl>
           <p class="side-label">Toolbox</p>
           <ul class="project-stack"><li>Python</li><li>OpenCV</li><li>NumPy</li><li>Matplotlib</li></ul>
@@ -159,13 +165,13 @@
         <div class="p-main">
           <span class="project-index">04 / Full-stack application</span>
           <h3>Prompt Lab: LLM rating stack</h3>
-          <p class="project-summary"><span>Purpose</span>Lets a user try a language model, rate its answer, and review the collected feedback.</p>
-          <p class="project-detail"><span>How I built it</span>A Gradio interface sends each prompt to a FastAPI service running Qwen3-0.6B. The service records the prompt and like/dislike rating in MySQL and provides rating statistics. Docker Compose runs the app and database together.</p>
-          <p class="project-impact"><span>Why it matters</span>This connects model use, user feedback and stored results in one end-to-end application, making responses easier to review than a one-off chat.</p>
+          <p class="project-summary"><span>Purpose</span>An end-to-end application for trying a language model, capturing a user's response rating, and reviewing feedback across interactions.</p>
+          <p class="project-detail"><span>Application architecture</span>A Gradio interface collects prompts and displays generated responses from Qwen3-0.6B through a FastAPI service. The backend persists prompts and like/dislike feedback in MySQL and exposes rating statistics; Docker Compose brings the application and database together for a reproducible local setup.</p>
+          <p class="project-impact"><span>Why it matters</span>Connects model inference to a persistent feedback loop: responses can be rated, stored and summarized instead of disappearing after a single chat. The project demonstrates the integration of an LLM, API, user interface, database and containerized development environment.</p>
           <ol class="project-flow" aria-label="Project workflow">
             <li><span>01</span>Submit prompt</li>
-            <li><span>02</span>Rate response</li>
-            <li><span>03</span>Review statistics</li>
+            <li><span>02</span>Generate &amp; rate response</li>
+            <li><span>03</span>Persist &amp; review feedback</li>
           </ol>
         </div>
         <aside class="p-side">
@@ -174,6 +180,7 @@
             <div><dt>Model</dt><dd>Qwen3-0.6B</dd></div>
             <div><dt>Feedback</dt><dd>Like / dislike</dd></div>
             <div><dt>Storage</dt><dd>MySQL</dd></div>
+            <div><dt>Deployment</dt><dd>Docker Compose</dd></div>
           </dl>
           <p class="side-label">Toolbox</p>
           <ul class="project-stack"><li>FastAPI</li><li>Transformers</li><li>MySQL</li><li>Gradio</li><li>Docker</li></ul>
@@ -185,13 +192,13 @@
         <div class="p-main">
           <span class="project-index">05 / Data analysis</span>
           <h3>Climate trend analysis</h3>
-          <p class="project-summary"><span>Purpose</span>Studies historical climate data to explore long-term temperature trends and compare them with reported case counts.</p>
-          <p class="project-detail"><span>How I built it</span>I cleaned and explored the data, then created interactive charts and maps, a correlation matrix and a linear regression model to examine the trends.</p>
-          <p class="project-impact"><span>Why it matters</span>The visualizations make patterns easier to inspect, while the statistical outputs support further analysis. Correlation and regression can show relationships and trends, but do not by themselves prove cause and effect.</p>
+          <p class="project-summary"><span>Purpose</span>Explores long-term temperature patterns and their relationship with reported case counts through a reproducible data-analysis workflow.</p>
+          <p class="project-detail"><span>Analysis workflow</span>After cleaning and exploring the data, Python analysis produces interactive charts and maps to make geographic and temporal patterns easier to inspect. A correlation matrix summarizes relationships between variables, while linear regression provides a model for examining trends.</p>
+          <p class="project-impact"><span>Why it matters</span>Combines exploratory analysis, geographic visualization and statistical modelling in one investigation. Correlation and regression can highlight patterns and associations, but do not by themselves establish that temperature causes changes in reported cases.</p>
           <ol class="project-flow" aria-label="Project workflow">
             <li><span>01</span>Clean climate data</li>
-            <li><span>02</span>Analyze trends</li>
-            <li><span>03</span>Visualize results</li>
+            <li><span>02</span>Explore patterns &amp; relationships</li>
+            <li><span>03</span>Visualize &amp; model trends</li>
           </ol>
         </div>
         <aside class="p-side">
@@ -199,11 +206,42 @@
           <dl class="project-facts">
             <div><dt>Focus</dt><dd>Temperature trends</dd></div>
             <div><dt>Comparison</dt><dd>Reported case counts</dd></div>
-            <div><dt>Outputs</dt><dd>Maps, charts, regression</dd></div>
+            <div><dt>Methods</dt><dd>Correlation &amp; regression</dd></div>
+            <div><dt>Outputs</dt><dd>Interactive maps &amp; charts</dd></div>
           </dl>
           <p class="side-label">Toolbox</p>
           <ul class="project-stack"><li>Python</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Seaborn</li></ul>
           <a href="https://github.com/MrMuhammadFahad/climate-trend-analysis">View repository</a>
+        </aside>
+      </li>
+
+      <li class="project">
+        <div class="p-main">
+          <span class="project-index">06 / FinTech · Merchant payments</span>
+          <h3>RoPay</h3>
+          <p class="project-summary"><span>Product</span>A Raast-integrated payments platform that helps merchants onboard digitally and accept fast QR payments.</p>
+          <p class="project-detail"><span>What I designed &amp; built</span>End-to-end product delivery across the frontend, backend, system architecture and database. The product brings merchant onboarding, static and dynamic QR payments, transaction history and operational tools together across the app and web portal.</p>
+          <p class="project-impact"><span>Product experience</span>Customers can review payments and receive transaction notifications, while merchants use a web portal with filters, transaction details and analytics. The public product describes Raast interbank payments and UBL banking services, including balance inquiry and fund transfers.</p>
+        </div>
+        <aside class="p-side">
+          <p class="side-label">Solution areas</p>
+          <ul class="project-stack"><li>Mobile experience</li><li>Merchant portal</li><li>QR payments</li><li>Raast integration</li><li>Backend APIs</li><li>System architecture</li><li>Database design</li></ul>
+          <a href="https://ropay.pk/" target="_blank" rel="noopener noreferrer">Visit RoPay ↗</a>
+        </aside>
+      </li>
+
+      <li class="project">
+        <div class="p-main">
+          <span class="project-index">07 / Sports · Gaming &amp; live content</span>
+          <h3>EX Sports</h3>
+          <p class="project-summary"><span>Product</span>A Web3 sports platform bringing mobile games, digital rewards and live sports content into one experience.</p>
+          <p class="project-detail"><span>What I designed &amp; built</span>Designed and developed the product end to end across its frontend, backend, system architecture and database, connecting the user experience to the services and data behind the platform.</p>
+          <p class="project-impact"><span>Product experience</span>The platform combines sports gaming and rewards with EX Sports TV and athlete-focused digital collectibles, giving fans multiple ways to engage with sports content.</p>
+        </div>
+        <aside class="p-side">
+          <p class="side-label">Solution areas</p>
+          <ul class="project-stack"><li>Web3 product</li><li>Sports games</li><li>Digital rewards</li><li>Live content</li><li>Backend services</li><li>System architecture</li><li>Database design</li></ul>
+          <a href="https://www.ex-sports.io/" target="_blank" rel="noopener noreferrer">Visit EX Sports ↗</a>
         </aside>
       </li>
     </ul>
@@ -217,39 +255,42 @@
 
     <ol class="timeline">
       <li>
-        <p class="when">Mar 2024 to Aug 2025</p>
+        <p class="when">March 2024 to August 2025</p>
         <div>
           <h3>Senior Software Engineer</h3>
           <p class="where">Rockville Technologies, Islamabad</p>
           <ul>
-            <li>Designed backend microservices in FastAPI, Flask and NestJS, with React frontends and secure APIs using JWT and role-based access control.</li>
-            <li>Improved performance through SQL and NoSQL tuning, indexing and Redis caching.</li>
-            <li>Deployed cloud-native apps on AWS (S3, Lambda, EC2) with Docker and automated CI/CD pipelines.</li>
-            <li>Built automated data workflows, reporting systems, agentic AI solutions and FinTech integrations (payment gateways, transaction processing).</li>
+            <li>Designed and built backend microservices in Python (FastAPI, Flask) and Node.js (NestJS), with React frontends and secure REST APIs using JWT authentication and role based access control.</li>
+            <li>Developed agentic AI solutions for autonomous task execution and orchestration, connecting AI logic with backend services and automated data workflows.</li>
+            <li>Created automated data workflows and reporting systems for reliable, repeatable data handling.</li>
+            <li>Improved performance and availability through SQL and NoSQL tuning, indexing and Redis caching, keeping latency low.</li>
+            <li>Deployed cloud-native applications on AWS (S3, Lambda, EC2) with Docker and automated CI/CD pipelines for continuous delivery.</li>
+            <li>Delivered secure FinTech integrations, including payment gateways, transaction processing and financial data handling.</li>
           </ul>
         </div>
       </li>
       <li>
-        <p class="when">Jul 2023 to Mar 2024</p>
+        <p class="when">July 2023 to March 2024</p>
         <div>
           <h3>Software Engineer</h3>
           <p class="where">IKONIC Solutions, Islamabad</p>
           <ul>
-            <li>Built web applications with Node.js (Express) and Flask, and responsive interfaces in Angular and React.</li>
-            <li>Optimised MongoDB with indexing and added Redis caching for faster data access.</li>
-            <li>Implemented authentication, rate limiting and RBAC while refactoring systems into modular architectures.</li>
+            <li>Built scalable web applications with Node.js (Express) and Python (Flask) following clean, modular architecture principles.</li>
+            <li>Developed responsive, user-focused interfaces in Angular and React and connected them smoothly to backend services.</li>
+            <li>Optimised MongoDB with strategic indexing and added Redis caching to speed up data access.</li>
+            <li>Implemented authentication, rate limiting and role based access control, and refactored systems into modular, maintainable architectures.</li>
           </ul>
         </div>
       </li>
       <li>
-        <p class="when">Oct 2021 to Jul 2023</p>
+        <p class="when">October 2021 to July 2023</p>
         <div>
           <h3>Junior Software Engineer</h3>
           <p class="where">MWAN Mobiles, Rawalpindi</p>
           <ul>
-            <li>Built APIs in Node.js and Python (Flask, FastAPI) and integrated third-party payment, SMS and analytics services.</li>
-            <li>Migrated a monolith to microservices and added real-time features with WebSockets and Socket.IO.</li>
-            <li>Tuned backend performance and reduced latency.</li>
+            <li>Built scalable APIs with Node.js and Python (Flask, FastAPI) and integrated third-party payment, SMS and analytics services.</li>
+            <li>Migrated monolithic systems to a microservices architecture and added real time features with WebSockets and Socket.IO.</li>
+            <li>Tuned backend performance, reduced latency and improved overall system responsiveness.</li>
           </ul>
         </div>
       </li>
@@ -266,7 +307,7 @@
       <div>
         <h3>Master 1, Biometrics and Computer Vision</h3>
         <p class="where">Université Paris-Est Créteil (UPEC), 2025 to 2026</p>
-        <p>Focus areas include optics, image processing, computer vision, multimedia and international biometrics. Completed 60 ECTS credits.</p>
+        <p>Average 15.365 out of 20 with honours (mention Bien), 60 ECTS credits.</p>
       </div>
     </div>
 
