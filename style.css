@@ -48,6 +48,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .topbar nav a:hover { color: var(--text); background: var(--surface-2); }
 .topbar nav .nav-cta { background: var(--accent); color: #fff; font-weight: 600; margin-left: 0.4rem; }
 .topbar nav .nav-cta:hover { background: var(--accent-hover); color: #fff; }
+.topbar nav .language-toggle {
+  flex: none; border: 1px solid var(--line); border-radius: 999px; background: transparent;
+  color: var(--text); padding: 0.35rem 0.7rem; margin-left: 0.35rem;
+  font: inherit; font-weight: 700; cursor: pointer;
+}
+.topbar nav .language-toggle:hover { background: var(--surface-2); }
+.topbar nav .language-toggle:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
 
 /* Hero */
 .hero { 
@@ -249,6 +256,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .topbar nav { gap: 0; width: 100%; overflow-x: auto; scrollbar-width: none; font-size: 0.76rem; flex-wrap: nowrap; justify-content: flex-start; }
   .topbar nav::-webkit-scrollbar { display: none; }
   .topbar nav a { flex: none; white-space: nowrap; padding: 0.35rem 0.45rem; }
+  .topbar nav .language-toggle { padding: 0.35rem 0.55rem; }
   .contact { border-radius: 26px 26px 0 0; }
 }
 @media (max-width: 30rem) {
